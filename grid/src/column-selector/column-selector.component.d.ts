@@ -1,0 +1,31 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ColDef } from 'ag-grid-community';
+import { MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import * as i0 from "@angular/core";
+export declare class ColumnSelectorComponent implements OnInit {
+    data: any;
+    columnDefs: ColDef[];
+    searchColumnInput: ElementRef;
+    filteredColumns: any[];
+    faCheck: any;
+    faXmark: any;
+    matDialogConfig: MatDialogConfig;
+    callback: (arr: string[], flag: boolean) => void;
+    private readonly _matDialogRef;
+    private readonly triggerElementRef;
+    constructor(_matDialogRef: MatDialogRef<ColumnSelectorComponent>, data: any);
+    ngOnInit(): void;
+    updateMatDialogPosition(): void;
+    toggleDisplayValue(column: any): void;
+    selectAll(): void;
+    selectNone(): void;
+    reset(): void;
+    selectAllBy(flag: boolean): void;
+    applyFilter(event: Event): void;
+    searchColumnByString(filterValue: string): void;
+    clearSearchBox(): void;
+    checkColumnInputValue(): boolean;
+    getCheckedLen(): number;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ColumnSelectorComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColumnSelectorComponent, "stl-grid-column-selector", never, {}, {}, never, never, false, never>;
+}

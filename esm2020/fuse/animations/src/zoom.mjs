@@ -1,0 +1,46 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { FuseAnimationCurves, FuseAnimationDurations } from './defaults';
+// -----------------------------------------------------------------------------------------------------
+// @ Zoom in
+// -----------------------------------------------------------------------------------------------------
+const zoomIn = trigger('zoomIn', [
+    state('void', style({
+        opacity: 0,
+        transform: 'scale(0.5)'
+    })),
+    state('*', style({
+        opacity: 1,
+        transform: 'scale(1)'
+    })),
+    // Prevent the transition if the state is false
+    transition('void => false', []),
+    // Transition
+    transition('void => *', animate('{{timings}}'), {
+        params: {
+            timings: `${FuseAnimationDurations.entering} ${FuseAnimationCurves.deceleration}`
+        }
+    })
+]);
+// -----------------------------------------------------------------------------------------------------
+// @ Zoom out
+// -----------------------------------------------------------------------------------------------------
+const zoomOut = trigger('zoomOut', [
+    state('*', style({
+        opacity: 1,
+        transform: 'scale(1)'
+    })),
+    state('void', style({
+        opacity: 0,
+        transform: 'scale(0.5)'
+    })),
+    // Prevent the transition if the state is false
+    transition('false => void', []),
+    // Transition
+    transition('* => void', animate('{{timings}}'), {
+        params: {
+            timings: `${FuseAnimationDurations.exiting} ${FuseAnimationCurves.acceleration}`
+        }
+    })
+]);
+export { zoomIn, zoomOut };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiem9vbS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3N0cmVhbXN0ZWNoL3VpLXNkay9mdXNlL2FuaW1hdGlvbnMvc3JjL3pvb20udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLE9BQU8sRUFBRSxLQUFLLEVBQUUsS0FBSyxFQUFFLFVBQVUsRUFBRSxPQUFPLEVBQUUsTUFBTSxxQkFBcUIsQ0FBQztBQUNqRixPQUFPLEVBQUUsbUJBQW1CLEVBQUUsc0JBQXNCLEVBQUUsTUFBTSxZQUFZLENBQUM7QUFFekUsd0dBQXdHO0FBQ3hHLFlBQVk7QUFDWix3R0FBd0c7QUFDeEcsTUFBTSxNQUFNLEdBQUcsT0FBTyxDQUFDLFFBQVEsRUFDM0I7SUFFSSxLQUFLLENBQUMsTUFBTSxFQUNSLEtBQUssQ0FBQztRQUNGLE9BQU8sRUFBSSxDQUFDO1FBQ1osU0FBUyxFQUFFLFlBQVk7S0FDMUIsQ0FBQyxDQUNMO0lBRUQsS0FBSyxDQUFDLEdBQUcsRUFDTCxLQUFLLENBQUM7UUFDRixPQUFPLEVBQUksQ0FBQztRQUNaLFNBQVMsRUFBRSxVQUFVO0tBQ3hCLENBQUMsQ0FDTDtJQUVELCtDQUErQztJQUMvQyxVQUFVLENBQUMsZUFBZSxFQUFFLEVBQUUsQ0FBQztJQUUvQixhQUFhO0lBQ2IsVUFBVSxDQUFDLFdBQVcsRUFBRSxPQUFPLENBQUMsYUFBYSxDQUFDLEVBQzFDO1FBQ0ksTUFBTSxFQUFFO1lBQ0osT0FBTyxFQUFFLEdBQUcsc0JBQXNCLENBQUMsUUFBUSxJQUFJLG1CQUFtQixDQUFDLFlBQVksRUFBRTtTQUNwRjtLQUNKLENBQ0o7Q0FDSixDQUNKLENBQUM7QUFFRix3R0FBd0c7QUFDeEcsYUFBYTtBQUNiLHdHQUF3RztBQUN4RyxNQUFNLE9BQU8sR0FBRyxPQUFPLENBQUMsU0FBUyxFQUM3QjtJQUVJLEtBQUssQ0FBQyxHQUFHLEVBQ0wsS0FBSyxDQUFDO1FBQ0YsT0FBTyxFQUFJLENBQUM7UUFDWixTQUFTLEVBQUUsVUFBVTtLQUN4QixDQUFDLENBQ0w7SUFFRCxLQUFLLENBQUMsTUFBTSxFQUNSLEtBQUssQ0FBQztRQUNGLE9BQU8sRUFBSSxDQUFDO1FBQ1osU0FBUyxFQUFFLFlBQVk7S0FDMUIsQ0FBQyxDQUNMO0lBRUQsK0NBQStDO0lBQy9DLFVBQVUsQ0FBQyxlQUFlLEVBQUUsRUFBRSxDQUFDO0lBRS9CLGFBQWE7SUFDYixVQUFVLENBQUMsV0FBVyxFQUFFLE9BQU8sQ0FBQyxhQUFhLENBQUMsRUFDMUM7UUFDSSxNQUFNLEVBQUU7WUFDSixPQUFPLEVBQUUsR0FBRyxzQkFBc0IsQ0FBQyxPQUFPLElBQUksbUJBQW1CLENBQUMsWUFBWSxFQUFFO1NBQ25GO0tBQ0osQ0FDSjtDQUNKLENBQ0osQ0FBQztBQUVGLE9BQU8sRUFBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBhbmltYXRlLCBzdGF0ZSwgc3R5bGUsIHRyYW5zaXRpb24sIHRyaWdnZXIgfSBmcm9tICdAYW5ndWxhci9hbmltYXRpb25zJztcclxuaW1wb3J0IHsgRnVzZUFuaW1hdGlvbkN1cnZlcywgRnVzZUFuaW1hdGlvbkR1cmF0aW9ucyB9IGZyb20gJy4vZGVmYXVsdHMnO1xyXG5cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cclxuLy8gQCBab29tIGluXHJcbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmNvbnN0IHpvb21JbiA9IHRyaWdnZXIoJ3pvb21JbicsXHJcbiAgICBbXHJcblxyXG4gICAgICAgIHN0YXRlKCd2b2lkJyxcclxuICAgICAgICAgICAgc3R5bGUoe1xyXG4gICAgICAgICAgICAgICAgb3BhY2l0eSAgOiAwLFxyXG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiAnc2NhbGUoMC41KSdcclxuICAgICAgICAgICAgfSlcclxuICAgICAgICApLFxyXG5cclxuICAgICAgICBzdGF0ZSgnKicsXHJcbiAgICAgICAgICAgIHN0eWxlKHtcclxuICAgICAgICAgICAgICAgIG9wYWNpdHkgIDogMSxcclxuICAgICAgICAgICAgICAgIHRyYW5zZm9ybTogJ3NjYWxlKDEpJ1xyXG4gICAgICAgICAgICB9KVxyXG4gICAgICAgICksXHJcblxyXG4gICAgICAgIC8vIFByZXZlbnQgdGhlIHRyYW5zaXRpb24gaWYgdGhlIHN0YXRlIGlzIGZhbHNlXHJcbiAgICAgICAgdHJhbnNpdGlvbigndm9pZCA9PiBmYWxzZScsIFtdKSxcclxuXHJcbiAgICAgICAgLy8gVHJhbnNpdGlvblxyXG4gICAgICAgIHRyYW5zaXRpb24oJ3ZvaWQgPT4gKicsIGFuaW1hdGUoJ3t7dGltaW5nc319JyksXHJcbiAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgIHBhcmFtczoge1xyXG4gICAgICAgICAgICAgICAgICAgIHRpbWluZ3M6IGAke0Z1c2VBbmltYXRpb25EdXJhdGlvbnMuZW50ZXJpbmd9ICR7RnVzZUFuaW1hdGlvbkN1cnZlcy5kZWNlbGVyYXRpb259YFxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgKVxyXG4gICAgXVxyXG4pO1xyXG5cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cclxuLy8gQCBab29tIG91dFxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5jb25zdCB6b29tT3V0ID0gdHJpZ2dlcignem9vbU91dCcsXHJcbiAgICBbXHJcblxyXG4gICAgICAgIHN0YXRlKCcqJyxcclxuICAgICAgICAgICAgc3R5bGUoe1xyXG4gICAgICAgICAgICAgICAgb3BhY2l0eSAgOiAxLFxyXG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiAnc2NhbGUoMSknXHJcbiAgICAgICAgICAgIH0pXHJcbiAgICAgICAgKSxcclxuXHJcbiAgICAgICAgc3RhdGUoJ3ZvaWQnLFxyXG4gICAgICAgICAgICBzdHlsZSh7XHJcbiAgICAgICAgICAgICAgICBvcGFjaXR5ICA6IDAsXHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06ICdzY2FsZSgwLjUpJ1xyXG4gICAgICAgICAgICB9KVxyXG4gICAgICAgICksXHJcblxyXG4gICAgICAgIC8vIFByZXZlbnQgdGhlIHRyYW5zaXRpb24gaWYgdGhlIHN0YXRlIGlzIGZhbHNlXHJcbiAgICAgICAgdHJhbnNpdGlvbignZmFsc2UgPT4gdm9pZCcsIFtdKSxcclxuXHJcbiAgICAgICAgLy8gVHJhbnNpdGlvblxyXG4gICAgICAgIHRyYW5zaXRpb24oJyogPT4gdm9pZCcsIGFuaW1hdGUoJ3t7dGltaW5nc319JyksXHJcbiAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgIHBhcmFtczoge1xyXG4gICAgICAgICAgICAgICAgICAgIHRpbWluZ3M6IGAke0Z1c2VBbmltYXRpb25EdXJhdGlvbnMuZXhpdGluZ30gJHtGdXNlQW5pbWF0aW9uQ3VydmVzLmFjY2VsZXJhdGlvbn1gXHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICApXHJcbiAgICBdXHJcbik7XHJcblxyXG5leHBvcnQgeyB6b29tSW4sIHpvb21PdXQgfTtcclxuXHJcbiJdfQ==

@@ -1,0 +1,34 @@
+import { EventEmitter } from '@angular/core';
+import { Definition, Designer, RootEditorContext, Properties, Step, StepEditorContext, StepsConfiguration, ToolboxConfiguration, ValidatorConfiguration } from 'sequential-workflow-designer';
+import * as i0 from "@angular/core";
+export declare class WorkFlowComponent {
+    private designer?;
+    onWorkFlowReady: EventEmitter<WorkFlowComponent>;
+    definition: Definition;
+    definitionJSON?: string;
+    selectedStepId: string | null;
+    isReadonly: boolean;
+    isToolboxCollapsed: boolean;
+    isEditorCollapsed: boolean;
+    isValid?: boolean;
+    readonly toolboxConfiguration: ToolboxConfiguration;
+    readonly stepsConfiguration: StepsConfiguration;
+    readonly validatorConfiguration: ValidatorConfiguration;
+    ngOnInit(): void;
+    onDesignerReady(designer: Designer): void;
+    onDefinitionChanged(definition: Definition): void;
+    onSelectedStepIdChanged(stepId: string | null): void;
+    onIsToolboxCollapsedChanged(isCollapsed: boolean): void;
+    onIsEditorCollapsedChanged(isCollapsed: boolean): void;
+    updateName(step: Step, event: Event, context: StepEditorContext): void;
+    updateProperty(properties: Properties, name: string, event: Event, context: RootEditorContext | StepEditorContext): void;
+    reloadDefinitionClicked(): void;
+    toggleReadonlyClicked(): void;
+    toggleSelectedStepClicked(): void;
+    toggleToolboxClicked(): void;
+    toggleEditorClicked(): void;
+    private updateDefinitionJSON;
+    private updateIsValid;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WorkFlowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WorkFlowComponent, "stl-work-flow", never, {}, { "onWorkFlowReady": "onWorkFlowReady"; }, never, never, false, never>;
+}

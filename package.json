@@ -1,0 +1,91 @@
+{
+  "name": "@streamstech/ui-sdk",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "sequential-workflow-designer": "^0.18.0",
+    "sequential-workflow-designer-angular": "^0.18.0",
+    "ag-grid-angular": "^30.2.0",
+    "ag-grid-community": "^30.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2015/streamstech-ui-sdk.mjs",
+  "es2020": "fesm2020/streamstech-ui-sdk.mjs",
+  "esm2020": "esm2020/streamstech-ui-sdk.mjs",
+  "fesm2020": "fesm2020/streamstech-ui-sdk.mjs",
+  "fesm2015": "fesm2015/streamstech-ui-sdk.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/streamstech-ui-sdk.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk.mjs"
+    },
+    "./constants": {
+      "types": "./constants/index.d.ts",
+      "esm2020": "./esm2020/constants/streamstech-ui-sdk-constants.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-constants.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-constants.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-constants.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-constants.mjs"
+    },
+    "./fuse/alert": {
+      "types": "./fuse/alert/index.d.ts",
+      "esm2020": "./esm2020/fuse/alert/streamstech-ui-sdk-fuse-alert.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-fuse-alert.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-fuse-alert.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-fuse-alert.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-fuse-alert.mjs"
+    },
+    "./fuse/animations": {
+      "types": "./fuse/animations/index.d.ts",
+      "esm2020": "./esm2020/fuse/animations/streamstech-ui-sdk-fuse-animations.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-fuse-animations.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-fuse-animations.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-fuse-animations.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-fuse-animations.mjs"
+    },
+    "./fuse/services": {
+      "types": "./fuse/services/index.d.ts",
+      "esm2020": "./esm2020/fuse/services/streamstech-ui-sdk-fuse-services.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-fuse-services.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-fuse-services.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-fuse-services.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-fuse-services.mjs"
+    },
+    "./grid": {
+      "types": "./grid/index.d.ts",
+      "esm2020": "./esm2020/grid/streamstech-ui-sdk-grid.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-grid.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-grid.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-grid.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-grid.mjs"
+    },
+    "./services": {
+      "types": "./services/index.d.ts",
+      "esm2020": "./esm2020/services/streamstech-ui-sdk-services.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-services.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-services.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-services.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-services.mjs"
+    },
+    "./work-flow": {
+      "types": "./work-flow/index.d.ts",
+      "esm2020": "./esm2020/work-flow/streamstech-ui-sdk-work-flow.mjs",
+      "es2020": "./fesm2020/streamstech-ui-sdk-work-flow.mjs",
+      "es2015": "./fesm2015/streamstech-ui-sdk-work-flow.mjs",
+      "node": "./fesm2015/streamstech-ui-sdk-work-flow.mjs",
+      "default": "./fesm2020/streamstech-ui-sdk-work-flow.mjs"
+    }
+  }
+}
